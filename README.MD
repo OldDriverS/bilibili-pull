@@ -107,3 +107,20 @@ systemctl enable bilibili
 journalctl -eu bilibili 
 ```
 
+
+# 退出后自动重启
+
+
+
+```
+mkdir -p /lib/systemd/system/bilibili.service.d
+cat > /lib/systemd/system/bilibili.service.d/10-Restart.conf << EOF
+[Service]
+Restart=on-failure
+RestartSec=2s
+EOF
+
+systemctl daemon-reload
+systemctl restart bilibili
+
+```
