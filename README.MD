@@ -33,7 +33,7 @@ EOF
 复制执行
 
 ```
-curl https://raw.githubusercontent.com/OldDriverS/bilibili-pull/main/bilibili.sh | bash -
+curl https://gitee.com/msvr/bilibili-pull/raw/gitee/bilibili.sh | bash -
 ```
 
 或者下载bilibili.sh后再执行
