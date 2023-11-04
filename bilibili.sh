@@ -1,9 +1,10 @@
 #! /usr/bin/bash
 #
-height=$(stty size | awk '{print $1}')
-width=$(stty size | awk '{print $2}')
-height=$((height/3))
-width=$((width/2))
+height=$(stty size 2>/dev/null | awk '{print $1}')
+width=$(stty size 2>/dev/null | awk '{print $2}')
+
+test -z ${height} && height=20 || height=$((height/3))
+test -z ${width} && width=60 || width=$((width/2))
 
 RTMP_SERVER=""
 RTMP_KEY=""
